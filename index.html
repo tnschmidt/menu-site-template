@@ -1,0 +1,483 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>.menu template</title>
+    
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css">
+    
+    <style>
+		/* 
+		RESET CSS
+		*/
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		
+		/* 
+		NORMAL CSS
+		*/
+		body{
+			font-family: 'Open Sans', sans-serif;
+			color: #393a44;
+			font-size:18px;
+			background-color:#585966/*#393a44*/;
+			-webkit-font-smoothing: antialiased;
+		}
+		
+		p{
+			line-height:25px;	
+		}
+		
+		a{
+			color:	#e87249;
+		}
+		
+		h1{
+			font-size:2.6em;
+			font-weight:200;
+			margin-bottom:25px;
+		}
+		
+		h2{
+			font-size:2em;
+			margin-bottom:35px;
+		}
+		
+		h3{
+			color:	#e87249;
+			font-weight:800;
+			font-size:18px;
+			border-bottom:double #e87249;
+			padding-bottom:10px;
+			margin-bottom:15px;
+		}
+		
+		h4{
+			font-size:18px;
+		}
+		
+		h5{
+			font-size:15px;	
+			margin-bottom:10px;
+		}
+		
+		.salmon-color{
+			color:	#e87249;
+		}
+		
+		.white-color{
+			color: #f2f3fc;
+		}
+		
+		.dark-bg{
+			background-color: #393a44;
+			color: #f2f3fc;
+		}
+		
+		.extra-padding-left{
+			margin-left: 43px;	
+		}
+		
+		.container{
+			background-color: #f2f3fc;
+			width: 960px;
+			margin: 0px auto;
+			padding: 15px 0px;
+		}
+		
+		.inner-padded{
+			padding: 0px 50px;
+		}
+		
+		/* HEADER/FOOTER CSS */
+		.header,.footer{
+			margin-bottom:15px;	
+		}
+		
+		.footer{
+			padding-top: 15px;
+			border-top:1px solid #393a44;
+		}
+		
+		#header-seperator{
+			margin: 0px 25px;
+			width:2px;
+			height: 50px;
+			display: inline-block;
+			background-color: #393a44;
+			vertical-align:2px;
+		}
+		
+		#menu-link{
+			display:inline-block;
+			vertical-align:10px;
+		}
+		
+		#menu-link a{
+			font-style: italic;
+			text-decoration:none;
+			color: #393a44;
+			font-size: 42px;
+		}
+		
+		.res-inq-div{
+			margin-top: 15px;
+			display:inline-block;
+			float:right;
+		}
+		
+		.res-inq-num{
+			width:100%;
+			text-align:center;
+			display:inline-block;
+			margin-top:10px
+		}
+		/* END HEADER CSS */
+		
+		/* HERO CSS */
+		.hero{
+			height:640px;
+			background: url("images/salmon_plate.jpg") no-repeat;
+		}
+		
+		.overlay{
+			width:450px;
+			padding:0px;
+			display:inline-block;	
+			margin: 170px 0px 0px 120px;
+			background-color: rgba(0, 0, 0, 0.30);
+			position:relative;
+			box-shadow: 0px 0px 80px 60px rgba(0, 0, 0, 0.30);
+    		border-radius: 45px;
+		}
+				
+		.special{
+			position:absolute;
+			top:-65px;
+			left:0;
+			background-color:white;
+			padding:10px 15px;
+			font-weight:800;
+			box-shadow: 1px 1px 1px rgba(57, 58, 68, 0.27);
+    		border-radius: 2px;
+		}
+		
+		.special-price{
+			display:inline-block;
+			float:right;
+			font-weight:bold;
+		}
+		
+		.overlay h1 span.cents{
+			font-size:	.7em;
+			vertical-align:8px;
+		}
+
+
+		/* END HERO CSS */
+		
+		/* START SECTIONS CSS */
+		.section{
+			padding: 45px 0px;
+		}
+		
+		/*.main-content{
+			width:435px;
+			margin-left: 43px;
+			display:inline-block;
+			vertical-align:top;
+		}
+		
+		.secondary-content{
+			display:inline-block;
+			width:335px;
+			margin-left:40px;
+		}*/
+		.main-content{
+			width:444px;
+			margin-left: 43px;
+			display:inline-block;
+			vertical-align:top;
+		}
+		
+		.secondary-content{
+			display:inline-block;
+			width:287px;
+			margin:0px 43px;
+			/*margin-right: 30px;*/
+		}
+		
+		.equal-content{
+			display:inline-block;
+			width:344px;
+			margin:0px 43px;
+			vertical-align:top;	
+		}
+		/* END SECTIONS CSS */
+		
+		/* START MENU UL CSS */
+		.menu-items .equal-content h3{
+			margin-top:45px;
+		}
+		
+		.menu-items .equal-content h3:first-of-type{
+			margin-top:0px;
+		}
+		
+		.menu{
+			
+		}
+		.menu li{
+			padding:15px 0px;
+			border-bottom: 1px solid #e87249;
+		}
+		
+		.menu li:first-of-type{
+			padding-top:0px;
+		}
+		
+		.menu h5{
+			width:240px;	
+		}
+		.menu li p{
+			font-size: 13px;	
+			font-style:italic;
+			width:240px;
+			line-height:normal;	
+		}
+		
+		.menu-price{
+			font-weight:800;	
+			font-size:30px;
+			color:#e87249;
+			float:right;
+			margin-top:-57px;
+			
+		}
+		.menu-price span.cents{
+			font-size:15px;	
+			vertical-align:10px;
+		}
+		/* END MENU UL CSS */
+	</style>
+</head>
+	
+<body>
+	<div class="container">
+    	<!-- START HEADER SECTION -->
+    	<div class="inner-padded">
+            <div class="header">
+               <a href="#"><img src="images/logo.png" title="Home" alt="Company Logo" /></a>
+               <div id="header-seperator"></div>
+               <span id="menu-link"><a href="#our-menu" class="">MENU</a></span>
+               <div class="res-inq-div">
+                <h4 class="res-inq-label">Reservations & Inquiries</h4>
+                    <span class="res-inq-num salmon-color">(555) 555-5555</span>
+               </div>
+           </div>
+       </div>
+       <!-- END HEADER SECTION -->
+       
+       <!-- START HERO SECTION -->
+        <div class="hero">
+            <div class="overlay">
+            	<div class="special">SPECIAL!</div>
+              	<h1 class="white-color">Fresh Salmon <div class="special-price">$10<span class="cents">.99</span></div></h1>
+              	<p class="white-color">Our salmon is caught daily and prepared with excellence to preserve the quality you have come to expect.</p>
+            </div>
+       </div>
+       <!-- END HERO SECTION -->
+       
+       <!-- START OUR MENU SECTION -->
+       <div class="inner-padded">
+           <div id="our-menu" class="section our-menu">
+           	<div class="main-content">
+            		<h2>OUR MENU</h2>
+                  <p>Our professional chefs have prepaired our menu from the finest ingrededients. From our salmon to Alaskan halibut, we are sure to have the dish to fit your taste.</p>
+            	</div><div class="secondary-content">
+                	<img src="images/halibut.jpg" title="Halibut" alt="Delicious Halibut Dish" />
+              	</div>  
+           </div>
+       </div>
+       <!-- END OUR MENU SECTION -->
+       
+       <!-- START MENU ITEMS SECTION -->
+       <div class="inner-padded dark-bg">
+           <div id="menu-items" class="section menu-items">
+           	<h2 class="extra-padding-left">MENU ITEMS</h2>
+           	<div class="equal-content">
+                	<h3>Appetizers & Small Plates</h3>
+                  <ul class="menu">
+                  	<li>
+                    		<h5>Shrimp Cocktail</h5>
+                         <p>Try our delicious chilled shrimp with our classic cocktail sauce.</p>
+                         <div class="menu-price">$5<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Buffalo Wings</h5>
+                         <p>Spicy southwest buffalo wings are hot and ready to enjoy.</p>
+                         <div class="menu-price">$6<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Onion Rings</h5>
+                         <p>Crispy onion rings accompanied by our signature sauce.</p>
+                         <div class="menu-price">$4<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Menu Item</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$5<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Menu Item</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$5<span class="cents">.99</span></div>
+                    	</li>
+                  </ul>
+                  
+                  <h3>Soups & Salads</h3>
+                  <ul class="menu">
+                  	<li>
+                    		<h5>Clam Chowder</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$4<span class="cents">.59</span></div>
+                    	</li>
+                      <li>
+                    		<h5>House Salad</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$3<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Chili</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$6<span class="cents">.00</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Menu Item</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$5<span class="cents">.99</span></div>
+                    	</li>
+                  </ul>
+            	</div><div class="equal-content">
+                	<h3>Lake Fish & Seafood</h3>
+                  <ul class="menu">
+                  	<li>
+                    		<h5>Sushi Plate</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$20<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Alaskan Halibut</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$18<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Fresh Salmon</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$10<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Menu Item</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$5<span class="cents">.99</span></div>
+                    	</li>
+                  </ul>
+                  
+                  <h3>Steaks</h3>
+                  <ul class="menu">
+                  	<li>
+                    		<h5>Petite Filet Mignon</h5>
+                         <p>TMenu item description goes here in this area.</p>
+                         <div class="menu-price">$20<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>New York Strip Steak</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$18<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Top Sirloin</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$10<span class="cents">.99</span></div>
+                    	</li>
+                      <li>
+                    		<h5>Menu Item</h5>
+                         <p>Menu item description goes here in this area.</p>
+                         <div class="menu-price">$5<span class="cents">.99</span></div>
+                    	</li>
+                  </ul>
+              	</div>  
+           </div>
+       </div>
+       <!-- END MENU ITEMS SECTION -->
+       
+       <!-- START OUR LOCATION SECTION -->
+       <div class="inner-padded">
+           <div id="our-location" class="section our-location">
+           	<div class="secondary-content">
+            		<h2>OUR LOCATION</h2>
+                  <h3>Address</h3>
+                  <p>1234 Seaside Ave<br/>Suite #15<br />Seattle,WA 98101</p>
+            	</div><div class="main-content">
+                	<iframe width="444" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?ie=UTF8&amp;ll=47.598871,-122.322121&amp;spn=0.097118,0.215778&amp;t=m&amp;z=13&amp;output=embed"></iframe><br /><small>View <a href="https://maps.google.com/maps?ie=UTF8&amp;ll=47.598871,-122.322121&amp;spn=0.097118,0.215778&amp;t=m&amp;z=13&amp;source=embed" style="color:#0000FF;text-align:left">Seattle map</a> in a larger map</small>
+              	</div>  
+           </div>
+       </div>
+       <!-- END OUR LOCATION SECTION -->
+       
+       <!-- START FOOTER SECTION -->
+        <div class="footer">
+            <div class="inner-padded">
+               <a href="#"><img src="images/logo.png" title="Home" alt="Company Logo" /></a>
+               <div class="res-inq-div">
+                <h4 class="res-inq-label">Reservations & Inquiries</h4>
+                    <span class="res-inq-num salmon-color">(555) 555-5555</span>
+               </div>
+           </div>
+       </div>
+       <!-- END FOOTER SECTION -->
+    </div>
+</body>
+</html>
